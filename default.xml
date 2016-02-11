@@ -18,7 +18,7 @@
            sync-c="true"
            sync-j="4" /> 
 
-  <default revision="refs/tags/android-6.0.1_r10"
+  <default revision="refs/tags/android-6.0.1_r16"
            remote="aosp"
            sync-j="4" />
 
