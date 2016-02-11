@@ -2,6 +2,10 @@
 <manifest>
   <remote  name="aosp"
            fetch="https://android.googlesource.com/" />
+  
+  <remote  name="cj"
+           fetch="https://github.com/cjkacz"
+           revision="to-6.1" />
 
   <remote  name="github"
            fetch="git://github.com/"
@@ -11,6 +15,13 @@
            fetch="https://github.com/AOSPB"
            revision="mm6.0" />
 
+  <remote name="bb"
+          fetch="https://bitbucket.org/" />
+
+  <remote  name="cm"
+           fetch="git://github.com/CyanogenMod/"
+           revision="cm-13.0" />
+           
   <remote  name="to"
            fetch="https://github.com/Team-OctOS/"
            review="review.teamoctos.com"
@@ -22,16 +33,32 @@
            remote="aosp"
            sync-j="4" />
 
-  <!-- BEGIN OCTOS -->
+  <!-- BEGIN CJKACZ-->
 
-  <project path="build" name="platform_build" groups="pdk" remote="to" revision="to-6.0" >
+  <project path="build" name="platform_build" groups="pdk" remote="cj" revision="to-6.1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="vendor/to" name="platform_vendor_to" remote="to" revision="to-6.0" />
+  <project path="vendor/to" name="platform_vendor_to" remote="cj" revision="to-6.1" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="to-6.1" />
+  
+ <!-- BEGIN GENERAL--> 
+ 
+  <project path="bionic" name="TipsyOs/android_bionic" remote="github" revision="6.0" />
+  <project path="frameworks/av" name="TipsyOs/frameworks_av" remote="github" revision="6.0" />
+  
+  <!-- BEGIN TOOLCHAIN-->
+  
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9" name="UBERTC/arm-eabi-4.9" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.3" name="UBERTC/arm-eabi-5.3" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-6.0" name="UBERTC/arm-eabi-6.0" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="UBERTC/arm-linux-androideabi-4.9" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.3" name="UBERTC/arm-linux-androideabi-5.3" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-kernel" name="UBERTC/aarch64-linux-android-4.9-kernel" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-5.3-kernel" name="UBERTC/aarch64-linux-android-5.3-kernel" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-6.0-kernel" name="UBERTC/aarch64-linux-android-6.0-kernel" remote="bb" revision="master" />
   
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="art" remote="aospb"  />
-  <project path="bionic" name="bionic" remote="aospb" />
   <project path="bootable/recovery" name="bootable_recovery" remote="aospb" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
@@ -279,7 +306,6 @@
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/av" name="frameworks_av" remote="aospb" />
-  <project path="frameworks/base" name="frameworks_base" remote="aospb" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
