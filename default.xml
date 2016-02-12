@@ -40,7 +40,7 @@
   </project>
   <project path="manifest" name="platform_manifest" remote="cj" revision="to-6.1" />
   <project path="vendor/to" name="platform_vendor_to" remote="cj" revision="to-6.1" />
-  <project path="frameworks/base" name="platform_frameworks_base" remote="to-6.1" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="cj" revision="to-6.1" />
   
  <!-- BEGIN GENERAL--> 
  
@@ -49,10 +49,8 @@
   
   <!-- BEGIN TOOLCHAIN-->
   
-  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9" name="UBERTC/arm-eabi-4.9" remote="bb" revision="master" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.3" name="UBERTC/arm-eabi-5.3" remote="bb" revision="master" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-6.0" name="UBERTC/arm-eabi-6.0" remote="bb" revision="master" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="UBERTC/arm-linux-androideabi-4.9" remote="bb" revision="master" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.3" name="UBERTC/arm-linux-androideabi-5.3" remote="bb" revision="master" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-kernel" name="UBERTC/aarch64-linux-android-4.9-kernel" remote="bb" revision="master" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-5.3-kernel" name="UBERTC/aarch64-linux-android-5.3-kernel" remote="bb" revision="master" />
@@ -306,7 +304,6 @@
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/av" name="frameworks_av" remote="aospb" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
