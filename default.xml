@@ -42,10 +42,15 @@
   <project path="vendor/to" name="platform_vendor_to" remote="cj" revision="to-6.1" />
   <project path="frameworks/base" name="platform_frameworks_base" remote="cj" revision="to-6.1" />
   
- <!-- BEGIN GENERAL--> 
+ <!-- BEGIN GITHUB REPOS--> 
  
   <project path="bionic" name="TipsyOs/android_bionic" remote="github" revision="6.0" />
   <project path="frameworks/av" name="TipsyOs/frameworks_av" remote="github" revision="6.0" />
+  <project path="hardware/ril" name="SlimRoms/hardware_ril" remote="github" revision="mm6.0" />
+  <project path="hardware/ril-caf" name="SlimRoms/hardware_ril" remote="github" revision="mm6.0-caf" />
+  <project path="packages/services/Mms" name="SlimRoms/packages_services_Mms" remote="github" revision="mm6.0" />
+  <project path="packages/services/Telecomm" name="SlimRoms/packages_services_Telecomm" remote="github" revision="mm6.0" />
+  <project path="packages/services/Telephony" name="SlimRoms/packages_services_Telephony" remote="github" revision="mm6.0" />
   
   <!-- BEGIN TOOLCHAIN-->
   
@@ -395,8 +400,6 @@
   <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" groups="qcom" />
   <project path="hardware/qcom/wlan" name="hardware_qcom_wlan" remote="aospb" />
   <project path="hardware/qcom/wlan-caf" name="hardware_qcom_wlan" remote="aospb" revision="mm6.0-caf" />
-  <project path="hardware/ril" name="hardware_ril" remote="aospb" />
-  <project path="hardware/ril-caf" name="hardware_ril" remote="aospb" revision="mm6.0-caf" />
   <project path="libcore" name="libcore" remote="aospb" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="platform/ndk" groups="generic_fs" />
@@ -461,9 +464,6 @@
   <project path="packages/screensavers/Basic" name="platform/packages/screensavers/Basic" groups="pdk-fs" />
   <project path="packages/screensavers/PhotoTable" name="platform/packages/screensavers/PhotoTable" groups="pdk-fs" />
   <project path="packages/screensavers/WebView" name="platform/packages/screensavers/WebView" groups="pdk-fs" />
-  <project path="packages/services/Mms" name="packages_services_Mms" remote="aospb" />
-  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="aospb" />
-  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="aospb" />
   <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" groups="pdk-fs" />
   <project path="packages/wallpapers/Galaxy4" name="platform/packages/wallpapers/Galaxy4" groups="pdk-fs" />
   <project path="packages/wallpapers/HoloSpiral" name="platform/packages/wallpapers/HoloSpiral" groups="pdk-fs" />
