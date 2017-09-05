@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="aosp"
+  <remote name="aosp"
           fetch="https://android.googlesource.com"
           review="android-review.googlesource.com" />
   <remote name="github"
           fetch="http://github.com/" />
-  <remote  name="hedwig34"
+  <remote name="hedwig34"
            fetch="http://hedwig34.no-ip.org/AOSP/" />
   <default revision="refs/tags/android-8.0.0_r4"
            remote="aosp"
            sync-c="true"
            sync-j="16" />
 
-
-
-  <project path="build/make" name="platform/build" groups="pdk" >
-    <copyfile src="core/root.mk" dest="Makefile" />
-    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
-    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
-    <linkfile src="core" dest="build/core" />
-    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
-    <linkfile src="target" dest="build/target" />
-    <linkfile src="tools" dest="build/tools" />
-  </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
-  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
-    <linkfile src="root.bp" dest="Android.bp" />
-    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
-  </project>
   <project path="art" name="platform/art" groups="pdk" />
   <project path="bionic" name="platform/bionic" groups="pdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
@@ -568,5 +553,33 @@
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
+  <!-- Custom -->
+  <project path="manifest" name="platform_manifest" remote="hedwig34" revision="aosp-8.0" />
+
+  <project path="build/make" name="platform_build" remote="hedwig34" revision="aosp-8.0" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="platform_build_soong" remote="hedwig34" revision="aosp-8.0" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <project path="vendor/custom" name="platform_vendor_custom" remote="hedwig34" revision="aosp-8.0" />
+
+  <project path="hardware/ril" name="platform_hardware_ril" remote="hedwig34" revision="aosp-8.0" />
+
+  <!-- devices -->
+  <!-- shamu -->
+  <project path="kernel/moto/shamu" name="platform_kernel_moto_shamu" remote="hedwig34" revision="aosp-8.0" />
+  <project path="vendor/moto" name="proprietary_vendor_motorola" remote="hedwig34" revision="aosp-8.0" />
+  <project path="device/moto/shamu" name="platform_device_moto_shamu" remote="hedwig34" revision="aosp-8.0" />
+
 
 </manifest>
