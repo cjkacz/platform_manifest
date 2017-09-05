@@ -17,7 +17,6 @@
   <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
   <project path="art" name="platform/art" groups="pdk" />
   <project path="bionic" name="platform/bionic" groups="pdk" />
-  <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
   <project path="developers/build" name="platform/developers/build" />
@@ -386,7 +385,6 @@
   <project path="hardware/qcom/msm8x09" name="platform/hardware/qcom/msm8x09" groups="qcom_msm8x09" />
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom,pdk" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk" />
-  <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
   <project path="kernel/tests" name="kernel/tests" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
@@ -571,9 +569,10 @@
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
 
-  <project path="vendor/custom" name="platform_vendor_custom" remote="hedwig34" revision="aosp-8.0" />
-
+  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="hedwig34" revision="aosp-8.0" />
   <project path="hardware/ril" name="platform_hardware_ril" remote="hedwig34" revision="aosp-8.0" />
+
+  <project path="vendor/custom" name="platform_vendor_custom" remote="hedwig34" revision="aosp-8.0" />
 
   <!-- devices -->
   <!-- shamu -->
