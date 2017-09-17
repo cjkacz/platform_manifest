@@ -6,15 +6,16 @@
           review="android-review.googlesource.com" />
   <remote name="github"
           fetch="http://github.com/" />
-  <remote name="hedwig34"
-           fetch="http://hedwig34.no-ip.org/AOSP/" />
-  <default revision="refs/tags/android-8.0.0_r4"
+  <remote name="cjkacz"
+           fetch="https://github.com/cjkacz/" />
+  <remote name="hedwig"
+           fetch="http://hedwig34.no-ip.org/AOSP/" /> 
+  <default revision="refs/tags/android-8.0.0_r11"
            remote="aosp"
            sync-c="true"
            sync-j="16" />
 
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
-  <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
   <project path="art" name="platform/art" groups="pdk" />
   <project path="bionic" name="platform/bionic" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
@@ -550,9 +551,9 @@
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
   <!-- Custom -->
-  <project path="manifest" name="platform_manifest" remote="hedwig34" revision="aosp-8.0" />
+  <project path="manifest" name="platform_manifest" remote="cjkacz" revision="oreo" />
 
-  <project path="build/make" name="platform_build" remote="hedwig34" revision="aosp-8.0" >
+  <project path="build" name="platform_build" groups="pdk" remote="cjkacz" revision="oreo" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -561,10 +562,13 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="platform_build_soong" remote="hedwig34" revision="aosp-8.0" >
+  <project path="build/kati" name="android_build_kati" groups="pdk,tradefed" remote="cjkacz" revision="oreo" />
+  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="cjkacz" revision="oreo" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
+
+  <project path="vendor/to" name="platform_vendor_to" remote="cjkacz" revision="oreo" />
 
   <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="hedwig34" revision="aosp-8.0" />
   <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="hedwig34" revision="aosp-8.0" />
@@ -572,13 +576,15 @@
   <project path="packages/apps/Settings" name="platform_packages_apps_Settings" groups="pdk-fs" remote="hedwig34" revision="aosp-8.0" />
   <project path="packages/inputmethods/LatinIME" name="platform_packages_inputmethods_LatinIME" groups="pdk-fs" remote="hedwig34" revision="aosp-8.0" />
   
-  <project path="vendor/custom" name="platform_vendor_custom" remote="hedwig34" revision="aosp-8.0" />
-
+  
   <!-- devices -->
   <!-- shamu -->
   <project path="kernel/moto/shamu" name="platform_kernel_moto_shamu" remote="hedwig34" revision="aosp-8.0" />
   <project path="vendor/moto" name="proprietary_vendor_motorola" remote="hedwig34" revision="aosp-8.0" />
   <project path="device/moto/shamu" name="platform_device_moto_shamu" remote="hedwig34" revision="aosp-8.0" />
 
-
+  <!-- marlin -->
+  <project path="kernel/moto/shamu" name="kernel_google_marlin" remote="cjkacz" revision="oreo" />
+  <project path="vendor/google_devices" name="vendor_google_devices" remote="cjkacz" revision="oreo" />
+  <project path="device/google/marlin" name="device_google_marlin" remote="cjkacz" revision="oreo" />
 </manifest>
