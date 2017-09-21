@@ -9,7 +9,9 @@
   <remote name="cjkacz"
            fetch="https://github.com/cjkacz/" />
   <remote name="hedwig"
-           fetch="http://hedwig34.no-ip.org/AOSP/" /> 
+           fetch="http://hedwig34.no-ip.org/AOSP/" />
+  <remote name="opengapps"
+           fetch="https://github.com/opengapps/"  /> 
   <default revision="refs/tags/android-8.0.0_r11"
            remote="aosp"
            sync-c="true"
@@ -580,4 +582,12 @@
   <project path="kernel/google/marlin" name="kernel_google_marlin" remote="cjkacz" revision="oreo" />
   <project path="vendor/google_devices" name="vendor_google_devices" remote="cjkacz" revision="oreo" />
   <project path="device/google/marlin" name="device_google_marlin" remote="cjkacz" revision="oreo" />
+
+  <!-- opengapps -->
+  <project path="vendor/opengapps/build" name="aosp_build" revision="master" remote="opengapps" />
+  <project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps" />
+
+<!-- arm64 depends on arm -->
+  <project path="vendor/opengapps/sources/arm" name="arm" clone-depth="1" revision="master" remote="opengapps" />
+  <project path="vendor/opengapps/sources/arm64" name="arm64" clone-depth="1" revision="master" remote="opengapps" />
 </manifest>
