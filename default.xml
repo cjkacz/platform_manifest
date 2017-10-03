@@ -8,7 +8,7 @@
           fetch="http://github.com/" />
   <remote name="cjkacz"
            fetch="https://github.com/cjkacz/" />
-  <remote name="hedwig"
+  <remote name="hedwig34"
            fetch="http://hedwig34.no-ip.org/AOSP/" />
   <remote name="gitlab"
            fetch="https://gitlab.com/PureNexus/" />
