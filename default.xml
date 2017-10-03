@@ -12,7 +12,7 @@
            fetch="http://hedwig34.no-ip.org/AOSP/" />
   <remote name="gitlab"
            fetch="https://gitlab.com/PureNexus/" />
-  <default revision="refs/tags/android-8.0.0_r11"
+  <default revision="refs/tags/android-8.0.0_r15"
            remote="aosp"
            sync-c="true"
            sync-j="16" />
