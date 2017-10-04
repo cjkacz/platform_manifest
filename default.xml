@@ -556,6 +556,7 @@
   <project path="manifest" name="platform_manifest" remote="cjkacz" revision="oreo" />
 
   <project path="build" name="platform_build" groups="pdk" remote="cjkacz" revision="oreo" >
+    <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="build/kati" name="android_build_kati" groups="pdk,tradefed" remote="cjkacz" revision="oreo" />
   <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="cjkacz" revision="oreo" >
