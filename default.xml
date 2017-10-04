@@ -581,7 +581,7 @@
 
   <!-- marlin -->
   <project path="kernel/google/marlin" name="kernel_google_marlin" remote="cjkacz" revision="oreo" />
-  <project path="vendor/google_devices" name="vendor_google_devices" remote="cjkacz" revision="oreo" />
+  <project path="vendor/google" name="proprietary_vendor_google" remote="cjkacz" revision="oreo" />
   <project path="device/google/marlin" name="device_google_marlin" remote="cjkacz" revision="oreo" />
 
   <!-- beansgapps -->
